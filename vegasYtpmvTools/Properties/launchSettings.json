@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Copy": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files (x86)\\Games\\Steam\\steam.exe",
+      "commandLineArgs": "-applaunch 528200 -CMDMODULE $(TargetPath)",
+      "nativeDebugging": true
+    }
+  }
+}

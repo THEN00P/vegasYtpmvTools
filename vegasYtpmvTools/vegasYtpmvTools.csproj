@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net452</TargetFramework>
+    <AssemblyName>vegasYtpmvTools</AssemblyName>
+    <RootNamespace>vegasYtpmvTools</RootNamespace>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Costura.Fody" Version="5.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive; compile</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\flparser\Monad.FLParser.csproj" />
+    <ProjectReference Include="..\logger\LogWriter.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ScriptPortal.Vegas">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Games\Steam\steamapps\common\Vegas Pro 14.0\Vegas Pro 14.0\ScriptPortal.Vegas.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /y $(TargetPath) &quot;C:\Users\Lorenz\Documents\Vegas Application Extensions\&quot;" />
+  </Target>
+
+</Project>
