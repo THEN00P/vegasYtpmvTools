@@ -10,6 +10,6 @@ not quite ready yet
 ## Building
 1. Install .NET 4.5.2
 2. Open in Visual Studio
-3. Update the refrences to the ScriptPortal DLLs in your Vegas folder
+3. Update the references to the ScriptPortal DLLs in your Vegas folder
 4. Build the solution
 5. Copy the generated DLL to a valid Extensions folder e.g. `C:\ProgramData\VEGAS Pro\Application Extensions`
